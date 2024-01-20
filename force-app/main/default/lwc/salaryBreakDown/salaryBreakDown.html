@@ -1,0 +1,159 @@
+<template>
+  <lightning-card title="Salary Breakdown" icon-name="custom:custom17">
+    <div class="slds-p-around_medium">
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Description">Description</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate slds-text-align_right" title="Weekly">
+                Weekly
+              </div>
+            </th>
+            <th class="" scope="col">
+              <div
+                class="slds-truncate slds-text-align_right"
+                title="Fortnightly"
+              >
+                Fortnightly
+              </div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate slds-text-align_right" title="Monthly">
+                Monthly
+              </div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate slds-text-align_right" title="Annual">
+                Annual
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={incomeData} for:item="dataRow">
+            <tr key={dataRow.label} class="slds-hint-parent">
+              <td data-label="Description">
+                <div class="slds-truncate" title={dataRow.label}>
+                  {dataRow.label}
+                </div>
+              </td>
+              <td data-label="Weekly">
+                <div class="slds-truncate slds-text-align_right" title="Weekly">
+                  {dataRow.weekly}
+                </div>
+              </td>
+              <td data-label="Fortnightly">
+                <div
+                  class="slds-truncate slds-text-align_right"
+                  title="Fortnightly"
+                >
+                  {dataRow.fortnightly}
+                </div>
+              </td>
+              <td data-label="Monthly">
+                <div
+                  class="slds-truncate slds-text-align_right"
+                  title="Monthly"
+                >
+                  {dataRow.monthly}
+                </div>
+              </td>
+              <td data-label="Annual">
+                <div class="slds-truncate slds-text-align_right" title="Annual">
+                  {dataRow.annual}
+                </div>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <p class="slds-p-left_medium">
+        *Take home pay = Taxable income - Total taxes
+      </p>
+    </div>
+  </lightning-card>
+  <br />
+  <lightning-card title="Total Taxes Breakdown" icon-name="custom:custom17">
+    <div class="slds-p-around_medium">
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Description">Description</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate slds-text-align_right" title="Weekly">
+                Weekly
+              </div>
+            </th>
+            <th class="" scope="col">
+              <div
+                class="slds-truncate slds-text-align_right"
+                title="Fortnightly"
+              >
+                Fortnightly
+              </div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate slds-text-align_right" title="Monthly">
+                Monthly
+              </div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate slds-text-align_right" title="Annual">
+                Annual
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={taxData} for:item="dataRow">
+            <tr key={dataRow.label} class="slds-hint-parent">
+              <td data-label="Description">
+                <div class="slds-truncate" title={dataRow.label}>
+                  {dataRow.label}
+                </div>
+              </td>
+              <td data-label="Weekly">
+                <div class="slds-truncate slds-text-align_right" title="Weekly">
+                  {dataRow.weekly}
+                </div>
+              </td>
+              <td data-label="Fortnightly">
+                <div
+                  class="slds-truncate slds-text-align_right"
+                  title="Fortnightly"
+                >
+                  {dataRow.fortnightly}
+                </div>
+              </td>
+              <td data-label="Monthly">
+                <div
+                  class="slds-truncate slds-text-align_right"
+                  title="Monthly"
+                >
+                  {dataRow.monthly}
+                </div>
+              </td>
+              <td data-label="Annual">
+                <div class="slds-truncate slds-text-align_right" title="Annual">
+                  {dataRow.annual}
+                </div>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <p class="slds-p-left_medium">
+        *Total taxes = Income Tax + LITO + Medicare Levy
+      </p>
+    </div>
+  </lightning-card>
+</template>

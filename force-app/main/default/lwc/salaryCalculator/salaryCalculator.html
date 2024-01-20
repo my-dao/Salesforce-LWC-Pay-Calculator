@@ -1,0 +1,98 @@
+<template>
+  <lightning-card title="Pay Information" icon-name="custom:custom17">
+    <div class="slds-p-left_medium">
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="3">
+          <lightning-input
+            type="number"
+            label="Annual Salary Before Tax"
+            name="salaryInput"
+            onchange={handleSalaryChange}
+            value={salary}
+            placeholder="Enter your salary"
+            formatter="currency"
+            step="0.01"
+          >
+          </lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="3">
+          <lightning-input
+            type="number"
+            label="Superannuation Rate (%)"
+            name="superannuationInput"
+            formatter="percent-fixed"
+            step="0.5"
+            onchange={handleSuperRateChange}
+            placeholder="Enter superannuation rate"
+            value={superRate}
+          >
+          </lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="3">
+          <lightning-combobox
+            name="timePeriod"
+            label="Pay Frequency"
+            value={payPeriod}
+            options={timePeriodOptions}
+            placeholder="Select Pay Frequency"
+            onchange={handlePeriodChange}
+          >
+          </lightning-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="3">
+          <lightning-combobox
+            name="taxYear"
+            label="Tax Year"
+            value={taxYear}
+            options={taxYearOptions}
+            placeholder="Select Tax Year"
+          >
+          </lightning-combobox>
+        </lightning-layout-item>
+      </lightning-layout>
+      <fieldset class="slds-form-element">
+        <legend class="slds-form-element__legend slds-form-element__label">
+          Other information
+        </legend>
+        <div class="slds-form-element__control">
+          <div class="slds-checkbox">
+            <input
+              type="checkbox"
+              name="options"
+              id="checkbox-unique-id-92"
+              value="checkbox-unique-id-92"
+              onchange={handleIncludeSuperChange}
+            />
+            <label class="slds-checkbox__label" for="checkbox-unique-id-92">
+              <span class="slds-checkbox_faux"></span>
+              <span class="slds-form-element__label"
+                >Pay includes Superannuation</span
+              >
+            </label>
+          </div>
+          <div class="slds-checkbox">
+            <input
+              type="checkbox"
+              name="options"
+              id="checkbox-unique-id-93"
+              value="checkbox-unique-id-93"
+              onchange={handleMedicareExemptionChange}
+            />
+            <label class="slds-checkbox__label" for="checkbox-unique-id-93">
+              <span class="slds-checkbox_faux"></span>
+              <span class="slds-form-element__label">Medicare Exemption</span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <div class="slds-var-m-top_large">
+        <lightning-button
+          label="Calculate"
+          onclick={handleButtonClick}
+          class="slds-m-left_x-small"
+          variant = "success"
+        ></lightning-button>
+      </div>
+    </div>
+  </lightning-card>
+</template>
