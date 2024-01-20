@@ -61,3 +61,4 @@ It's important to note a few things:
 1. This app is a basic demonstration/estimation, suitable for a quick overview of how we convert gross base salary offered from Employers to net take home amount. It doesn't cover complexities such as Dependant children, Student loans, Senior and Pensioner Tax Offset (SAPTO), Overtime and any other arising amount.
 2. Specific to Tax Year 2023–2024: The calculations are aligned with the tax regulations of the 2023–2024 financial year. Update the logic for other tax years may be needed.
 3. Rounding rules: I rounded Income Tax and Total Taxes based on this rule: Amounts under 50 cents are rounded to zero. Amounts from 50 to 99 cents are rounded to the next dollar.
+4.The solution is designed in the context that in a year, there are: 260 days, 52 weeks, 26 fortnights, 12 months and in a week, there are 38 working hours. This configuration is included in custom metadata which can be easily changed based on individual needs.
