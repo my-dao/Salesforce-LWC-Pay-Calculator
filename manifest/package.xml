@@ -46,5 +46,9 @@
 		<members>salaryCalculator</members>
 		<name>LightningComponentBundle</name>
 	</types>
+	<types>
+		<members>*</members>
+		<name>LightningMessageChannel</name>
+	</types>
 	<version>58.0</version>
 </Package>
