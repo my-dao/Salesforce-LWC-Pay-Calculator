@@ -10,7 +10,7 @@ The Pay Calculator project, built using Salesforce Lightning Web Components (LWC
 
 ### SalaryCalculator
 
-The SalaryCalculator Lightning Web Component allows users to input their salary details, including the base salary, superannuation rate, pay frequency, and tax year. It validates user inputs and, upon successful validation, communicates the data to the SalaryBreakdown component using the Lightning Message Service.
+The SalaryCalculator Lightning Web Component allows users to input their salary details, including the salary, superannuation rate and pay frequency. It validates user inputs and, upon successful validation, communicates the data to the SalaryBreakdown component using the Lightning Message Service.
 
 Features:
 
@@ -48,7 +48,7 @@ The SalaryModel Apex class serves as a data model for structuring the salary inf
 To install this project in your Salesforce org:
 
 1. Clone the repository using SFDX or deploy it directly through Salesforce Developer Console.
-2. Ensure this project's custom metadata is deployed into your Salesforce org.
+2. Ensure this project's custom metadata objects, fields, records and messageChannel are deployed into your Salesforce org.
 
 ## Usage
 
@@ -58,7 +58,8 @@ Add the SalaryCalculator & SalaryBreakdown components to a Lightning page in you
 
 It's important to note a few things:
 
-1. This app is a basic demonstration/estimation, suitable for a quick overview of how we convert gross base salary offered from Employers to net take home amount. It doesn't cover complexities such as Dependant children, Student loans, Senior and Pensioner Tax Offset (SAPTO), Overtime and any other arising amount.
+1. This is a basic demonstration/estimation, suitable for a quick overview of how we convert gross base salary offered from Employers to net take home amount. It doesn't cover complexities such as Dependant children, Student loans, Senior and Pensioner Tax Offset (SAPTO), Overtime and any other arising amount.
 2. Specific to Tax Year 2023–2024: The calculations are aligned with the tax regulations of the 2023–2024 financial year. Update the logic for other tax years may be needed.
 3. Rounding rules: I rounded Income Tax and Total Taxes based on this rule: Amounts under 50 cents are rounded to zero. Amounts from 50 to 99 cents are rounded to the next dollar.
-4.The solution is designed in the context that in a year, there are: 260 days, 52 weeks, 26 fortnights, 12 months and in a week, there are 38 working hours. This configuration is included in custom metadata which can be easily changed based on individual needs.
+4. The solution is designed in the context that in a year, there are: 260 days, 52 weeks, 26 fortnights, 12 months and in a week, there are 38 working hours. This configuration is included in custom metadata which can be easily changed based on individual needs.
+
